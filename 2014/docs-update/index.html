@@ -90,31 +90,30 @@
 
                 <!-- title page -->
                 <section>
-                    <h1></h1>
-                    <h3></h3>
+                    <h1>Documentation Update</h1>
+                    <h3>Plans for 5.1 release</h3>
                     <p>
                         <small>
-                            Will Moore
+                            Helen
                         </small>
                     </p>
                 </section>
 
                 <!-- talk outline -->
                 <section>
-                    <h2>OMERO.figure</h2>
+                    <h2>Documentation</h2>
 
                     <ul>
-                        <li>Background</li>
-                        <li>Demo</li>
-                        <li>Tech</li>
-                        <li>Related software</li>
-                        <li>Next steps</li>
+                        <li>Developers</li>
+                        <li>Sysadmins</li>
+                        <li>Product pages</li>
+                        <li>Help</li>
                     </ul>
                 </section>
 
 
                 <section>
-                    <h2>Figure creation takes time</h2>
+                    <h2>Developer documentation</h2>
 
                     <img style="height:500px; border-width:5px" src="http://jcb.rupress.org/content/179/2/187/F3.large.jpg"/>
 
@@ -242,209 +241,6 @@ Alignment guides on drag / resize
 Rotate Image within panel
 Shapes from OMERO ROIs
                     </code></pre>
-                </section>
-
-
-                <section>
-                    <h2>Demo...</h2>
-
-                    <img style="height:550px" src="images/demo-screen-shot.png"/> <br>
-                    <small>See <a href="http://www.youtube.com/watch?v=anJPPx7uoUM">Older Demo</a> on youtube</small>
-
-                </section>
-
-
-                <section>
-                    <h2>Key Features</h2>
-
-                    <ul>
-                        <li>Each ‘panel’ is an independent viewer</li>
-                        <li>Select multiple panels to co-edit</li>
-                        <li>Full undo/redo</li>
-                        <li>Save as orig file (json)</li>
-                        <li>URL per file - bookmark, share, 'publish' etc</li>
-                        <li>Script to create PDF from json</li>
-                        <li>"Template" for figures</li>
-                    </ul>
-                </section>
-
-
-                <section>
-                    <h2>Tools & Tech</h2>
-
-                    <ul>
-                        <li><a href="http://backbonejs.org/">backbone.js</a> (MVC - also angular.js, ember.js etc)
-                            <ul>
-                                <li>model</li>
-                                <li>events</li>
-                                <li>view</li>
-                                <li>templating</li>
-                                <li>router</li>
-                            </ul>
-                        </li>
-                        <li><a href="http://getbootstrap.com/">Bootstrap</a> - css, icons, js</li>
-                        <li><a href="http://craig.is/killing/mice">Mousetrap</a> - Keyboard bindings</li>
-                        <li><a href="http://raphaeljs.com/">Raphael</a> - Drag handles etc</li>
-                        <li><a href="http://www.reportlab.com/software/opensource/">Reportlab</a> - PDF generation</li>
-                    </ul>
-                </section>
-
-
-                <section>
-                    <h2>Data Model</h2>
-
-                    <pre><code class="javascript">
-    panel = {
-        "imageId":205,
-        "name":"121-Control siRNA.ome.tiff",
-        "orig_width":163,
-        "orig_height":194,
-        "sizeT":23,
-        "sizeZ":6,
-        "theZ":2,
-        "theT":17,
-        "pixel_size":0.3312,
-        "zoom":188,
-        "dx":9.15,
-        "dy":12.7,
-        "width":102.4,
-        "height":102.5,
-        "y":641.1,
-        "x":191.9
-        "labels":[{"time":"hrs:mins","size":"14","position":"top","color":"000000"}],
-        "channels":[{"color":"FFFFFF","active":true,"window":{"max":743,"min":87,"end":345,"start":119},"emissionWave":528,"label":"528"}],
-        "deltaT":[5744,6047,6348,6649,6951,7254,7556,7858,8162,8464,8764,9065,9368,9671,9973,10274,10577,10879,11178,11483,11786,12090,12387],
-        "selected":false,
-        "datasetId":"",
-        "datasetName":"Multiple",
-    }
-
-                    </code></pre>
-                </section>
-
-
-                <section>
-                    <h2>Data Flow & Storage <br>&nbsp</h2>
-                    <div style="position:relative; background: white">
-                        <div class="title">Browser</div>
-                        <table class="centre" style="border: solid red 1px; position:relative">
-                            <tr><td>Javascript (Backbone.Model)</td></tr>
-                            <tr><td>&#8597;</td></tr>
-                            <tr><td>json</td></tr>
-                        </table>
-                    </div>
-                    <table class="centre" style="margin: 20px 0">
-                        <tr><td>&#8597;</td></tr>
-                        <tr><td>POST json string</td></tr>
-                        <tr><td> &#8597; &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                        &nbsp &nbsp &nbsp &nbsp &nbsp &darr;</td></tr>
-                    </table>
-                     <div style="position:relative; background: white">
-                        <div class="title">OMERO</div>
-                        <table class="centre" style="border: solid red 1px">
-                            <tr>
-                                <td style="width:50%">Save as Orig File<br>(retrieved by namespace)</td>
-                                <td style="width:50%">Export to PDF<br>(attached to all images)</td>
-                            </tr>
-                        </table>
-                    </div>
-                </section>
-
-
-                <section>
-                    <h2>FigureJ</h2>
-                    <img src="images/figureJ.png" style="height: 500px">
-                    <br>
-
-                    <small>
-                        <a target="new" href="http://imagejdocu.tudor.lu/doku.php?id=plugin:utilities:figurej:start">
-                            FigureJ
-                        </a>
-                    </small>
-                </section>
-
-
-                <section>
-                    <h2>Scientifig</h2>
-
-                    <img src="images/scientifig.png" style="height: 500px">
-                    <br>
-
-                    <small>
-                        <a target="new" href="http://srv-gred.u-clermont1.fr/labmirouse/software/">
-                            Scientifig
-                        </a>
-                    </small>
-                </section>
-
-
-                <section>
-                    <h2>Macnification "Light Table"</h2>
-
-                    <img src="images/macnification.png" style="height: 500px">
-                    <br>
-
-                    <small>
-                        <a target="new" href="http://www.orbicule.com/macnification/screencasts/lt.mov">
-                            Macnification - Light Table
-                        </a>
-                    </small>
-                </section>
-
-
-                <section>
-                    <h2>Figure Zero & FigShare</h2>
-
-                    <img src="http://wholeslide.com/images/fz-overview.jpg" style="height: 300px">
-                    <img src="images/figshare.png" style="height: 300px">
-                        <br>
-
-                    <small>
-                        <a target="new" href="http://wholeslide.com/figurezero/">
-                            Figure Zero
-                        </a> | 
-                        <a target="new" href="http://figshare.com/">
-                            FigShare
-                        </a>
-                    </small>
-                </section>
-
-
-                <section>
-                    <h2>JCB</h2>
-
-                    <img src="images/jcb.png" style="height: 500px">
-                    <br>
-
-                    <small>
-                        <a target="new" href="http://jcb-dataviewer.rupress.org/jcb/browse/2254/3991/">
-                            Posch 2010
-                        </a>
-                    </small>
-                </section>
-
-
-                <section>
-                    <h2>Next Steps...</h2>
-
-                    <ul>
-                        <li>Name ?
-                            <ul class="nobullet">
-                                <li>&#10008; FigureShop</li>
-                                <li>&#10008; FigureO</li>
-                                <li><strong>&#63;</strong> OMERO.figure</li>
-                                <li><strong>&#63;</strong> OMERO.paper</li>
-                                <li><strong>&#63;</strong> OMERO.LightTable</li>
-                            </ul>
-                        </li>
-                        <li>Version number for data model</li>
-                        <li>Install on nightshade
-                            <ul class="nobullet">
-                                <li>- Get feedback, fix bugs etc</li></ul>
-                        </li>
-                        <li>PR for develop</li>
-                        <li>Release for OMERO 5.?</li>
-                    </ul>
                 </section>
 
             </div>
